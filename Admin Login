@@ -1,0 +1,32 @@
+print("\tAdmin Login System")
+
+# Signup
+print("\n Signup ")
+name = input("Enter your Name: ")
+surname = input("Enter your Surname: ")
+email = input("Enter your Email: ")
+password = input("Enter your Password: ")
+conf_password = input("Confirm your Password: ")
+
+if password != conf_password:
+    print("Passwords do not match. Please restart.")
+    exit()
+
+print("\n User Accepted!")
+
+# Admin credentials (for this example, using the signup name & password)
+admin_name = name
+admin_password = password
+
+# Login
+print("\n Admin Login ")
+entered_name = input("Admin name: ")
+
+if entered_name == admin_name:
+    entered_password = input("Password: ")
+    if entered_password == admin_password:
+        print(" You have admin access!")
+    else:
+        print(" Wrong Password.")
+else:
+    print(" Wrong User Name.")
