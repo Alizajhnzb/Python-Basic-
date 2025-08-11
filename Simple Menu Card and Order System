@@ -1,0 +1,37 @@
+menu = {
+    "Burger": 250,
+    "Pizza": 800,
+    "Pasta": 450,
+    "Sandwich": 200,
+    "Fries": 150,
+    "Coffee": 120
+}
+
+# Display Menu
+print("MENU CARD")
+for item, price in menu.items():
+    print(f"{item:10} Rs {price}")
+
+order_total = 0
+order_list = []
+
+while True:
+    item = input("\nEnter item to order (or 'done' to finish): ").title()
+    
+    if item.lower() == 'done':
+        break
+    
+    if item in menu:
+        quantity = int(input(f"Enter quantity of {item}: "))
+        cost = menu[item] * quantity
+        order_total += cost
+        order_list.append((item, quantity, cost))
+        print(f"Added {quantity} x {item} = Rs {cost}")
+    else:
+        print("Item not on menu. Please try again.")
+
+# Final Bill
+print("\nYOUR ORDER")
+for item, qty, cost in order_list:
+    print(f"{item:10} x {qty} = Rs {cost}")
+print(f"TOTAL BILL: Rs {order_total}")
