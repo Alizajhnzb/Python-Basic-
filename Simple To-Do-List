@@ -1,0 +1,7 @@
+tasks = []
+while True:
+    task = input("Enter a task (or 'done' to finish): ")
+    if task.lower() == 'done':
+        break
+    tasks.append(task)
+print("Your tasks:", tasks)
